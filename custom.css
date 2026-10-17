@@ -1,0 +1,77 @@
+/* Replaces the React state/JS behaviour of the original with CSS only. */
+
+/* --- Scroll progress bar (scroll-driven animation; hidden where unsupported) --- */
+.scroll-progress {
+  width: 100%;
+  transform-origin: left;
+  transform: scaleX(0);
+}
+@supports (animation-timeline: scroll()) {
+  .scroll-progress {
+    animation: scroll-progress-grow linear both;
+    animation-timeline: scroll(root);
+  }
+}
+@keyframes scroll-progress-grow {
+  to { transform: scaleX(1); }
+}
+
+/* --- Mobile menu (:target) ---
+   Opening links to #menu, closing links to #menu-close. Any nav link (#works,
+   #about, ...) moves the target elsewhere, so the menu closes by itself.
+   The anchors are position:fixed so targeting them never scrolls the page. */
+.menu-anchor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+}
+.mobile-menu { display: none; }
+.icon-close { display: none !important; }
+@media (max-width: 767px) {
+  .site-header:has(#menu:target) .mobile-menu { display: block; }
+  .site-header:has(#menu:target) .icon-open { display: none !important; }
+  .site-header:has(#menu:target) .icon-close { display: grid !important; }
+}
+
+/* --- Selected Works card images --- */
+.work-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 700ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.work-card:hover .work-img,
+.work-card:focus-within .work-img {
+  transform: scale(1.04);
+}
+.work-shade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 34%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.55), transparent);
+  pointer-events: none;
+}
+
+/* --- Selected Works cards: hover / focus (click or tap) expands the spec row --- */
+.work-card { outline: none; }
+.work-card:hover,
+.work-card:focus-within {
+  box-shadow: 0 0 0 1px var(--text);
+}
+.work-card:hover .work-arrow,
+.work-card:focus-within .work-arrow {
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
+}
+.work-card:hover .work-detail,
+.work-card:focus-within .work-detail {
+  grid-template-rows: 1fr;
+  opacity: 1;
+}

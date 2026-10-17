@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rakesh — Photoreal Spaces Built in 3D</title>
+  <meta name="description" content="3D visualizer in Hyderabad specialising in interior, exterior archviz and product visualization.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="custom.css">
+</head>
+<body>
+<div class="min-h-screen bg-[var(--bg)] text-[var(--text)] overflow-clip selection:bg-white selection:text-black">
+
+  <!-- Scroll progress (pure CSS, scroll-driven animation) -->
+  <div class="fixed top-0 left-0 right-0 h-[2px] z-[100] origin-left bg-[var(--border)]">
+    <div class="scroll-progress h-full bg-[var(--text)]"></div>
+  </div>
+
+  <header class="site-header sticky top-0 z-50 border-b border-[var(--border-soft)] bg-[rgba(10,10,10,0.8)] backdrop-blur-[18px]" style="top:var(--safe-area-inset-top)">
+    <span id="menu" class="menu-anchor"></span>
+    <span id="menu-close" class="menu-anchor"></span>
+    <div class="mx-auto max-w-[1440px] px-6 md:px-10 lg:px-12 flex h-[64px] items-center justify-between">
+      <div class="flex items-center gap-10">
+        <a href="#" class="group flex items-center gap-3">
+          <div class="h-[28px] w-[28px] rounded-[6px] bg-[var(--text)] text-[var(--bg)] grid place-items-center font-semibold text-[13px] tracking-[-0.02em]">R</div>
+          <div class="leading-[0.9]">
+            <div class="text-[13px] font-[600] tracking-[0.08em] uppercase">Rakesh</div>
+            <div class="text-[10px] tracking-[0.12em] uppercase text-[var(--text-muted)]">Hyderabad — IN</div>
+          </div>
+        </a>
+        <nav class="hidden md:flex items-center gap-8 text-[11.5px] tracking-[0.12em] uppercase text-[var(--text-muted)]">
+          <a href="#works" class="hover:text-[var(--text)] transition-colors">Works</a>
+          <a href="#breakdown" class="hover:text-[var(--text)] transition-colors">Process</a>
+          <a href="#about" class="hover:text-[var(--text)] transition-colors">About</a>
+          <a href="#skills" class="hover:text-[var(--text)] transition-colors">Skills</a>
+        </nav>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="#contact" class="hidden md:inline-flex h-[36px] items-center gap-2 rounded-full border border-[var(--border)] px-4 text-[11px] tracking-[0.12em] uppercase hover:bg-[var(--surface)] transition-colors">
+          <span class="h-[5px] w-[5px] rounded-full bg-[#4ade80] animate-pulse"></span>Available for work
+        </a>
+        <a href="#menu" class="icon-open md:hidden h-9 w-9 grid place-items-center rounded-full border border-[var(--border)]" aria-label="Open menu"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu" aria-hidden="true"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg></a>
+        <a href="#menu-close" class="icon-close md:hidden h-9 w-9 grid place-items-center rounded-full border border-[var(--border)]" aria-label="Close menu"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></a>
+      </div>
+    </div>
+    <div class="mobile-menu md:hidden border-t border-[var(--border-soft)] bg-[var(--bg-soft)] px-6 py-6 space-y-6">
+      <nav class="grid gap-4 text-[13px] tracking-[0.14em] uppercase">
+        <a href="#works" class="py-2 border-b border-[var(--border-soft)]">Works</a>
+        <a href="#breakdown" class="py-2 border-b border-[var(--border-soft)]">Process</a>
+        <a href="#about" class="py-2 border-b border-[var(--border-soft)]">About</a>
+        <a href="#skills" class="py-2">Skills</a>
+      </nav>
+      <div class="flex gap-3">
+        <a href="mailto:arun@viz.studio" class="flex-1 h-11 grid place-items-center rounded-full bg-[var(--text)] text-[var(--bg)] text-[12px] tracking-[0.1em] uppercase font-medium">Email</a>
+        <a href="#contact" class="flex-1 h-11 grid place-items-center rounded-full border border-[var(--border)] text-[12px] tracking-[0.1em] uppercase">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative mx-auto max-w-[1440px] px-6 md:px-10 lg:px-12 pt-10 md:pt-16 lg:pt-20 pb-12">
+    <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-10">
+      <div class="max-w-[860px]">
+        <div class="mb-6 flex items-center gap-3">
+          <span class="h-px w-12 bg-[var(--text-muted)]"></span>
+          <span class="text-[11px] tracking-[0.18em] uppercase text-[var(--text-muted)]">3D Visualizer / Hyderabad • Since 2019</span>
+        </div>
+        <h1 class="serif text-[14vw] md:text-[9vw] lg:text-[98px] leading-[0.86] tracking-[-0.04em] font-[400]">
+          <span class="block">Photoreal</span>
+          <span class="block ml-[0.08em] text-[var(--text-muted)] italic font-[400]">Spaces.</span>
+          <span class="block">Built in 3D.</span>
+        </h1>
+        <div class="mt-8 grid grid-cols-1 md:grid-cols-[1.2fr_0.8fr] gap-8 items-end">
+          <p class="max-w-[460px] text-[15px] leading-[1.7] text-[var(--text-muted)]">I help architects, interior designers, and brands in Hyderabad translate ideas into sellable, photoreal imagery. Specializing in interior, exterior archviz and product visualization that feels built, not rendered.</p>
+          <div class="flex gap-3">
+            <a href="#works" class="group inline-flex h-[44px] items-center gap-3 rounded-full bg-[var(--text)] px-6 text-[12px] tracking-[0.12em] uppercase text-[var(--bg)] font-[600] hover:bg-white transition-colors">View Selected Works<span class="grid h-6 w-6 place-items-center rounded-full bg-black/10 group-hover:translate-x-0.5 transition-transform"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></span></a>
+            <a href="#breakdown" class="inline-flex h-[44px] items-center rounded-full border border-[var(--border)] px-6 text-[12px] tracking-[0.12em] uppercase hover:bg-[var(--surface)] transition-colors">Process</a>
+          </div>
+        </div>
+      </div>
+      <div class="hidden lg:block text-right text-[11px] leading-[1.6] tracking-[0.12em] uppercase text-[var(--text-dim)]">
+        <div>EST. HYDERABAD</div>
+        <div>GMT+5:30</div>
+        <div class="mt-2 text-[var(--text-muted)]">SCROLL ↓</div>
+      </div>
+    </div>
+
+    <div class="mt-12 md:mt-16 relative">
+      <div class="relative overflow-hidden rounded-[18px] md:rounded-[24px] border border-[var(--border-soft)] bg-[var(--bg-elevated)]">
+        <div class="relative aspect-[16/9] md:aspect-[16/8.5] w-full overflow-hidden bg-gradient-to-br from-[#2b2b2b] via-[#1a1a1a] to-[#0e0e0e]">
+          <div class="absolute inset-0 opacity-[0.25]" style="background-image:linear-gradient(var(--border-soft) 1px, transparent 1px), linear-gradient(90deg, var(--border-soft) 1px, transparent 1px);background-size:48px 48px"></div>
+          <div class="absolute inset-0 flex flex-col items-center justify-center">
+            <div class="text-[11px] tracking-[0.4em] uppercase text-[var(--text-dim)] mb-4">Hero Render Preview</div>
+            <div class="serif text-[16vw] md:text-[12vw] lg:text-[160px] leading-none tracking-[-0.06em] text-[rgba(245,242,237,0.06)]">HERO RENDER</div>
+            <div class="mt-6 flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 backdrop-blur">
+              <div class="h-2 w-2 rounded-full bg-[#f5f2ed] animate-pulse"></div>
+              <span class="text-[10px] tracking-[0.16em] uppercase text-white/60">4K • Corona 10 • 32bit • ACES</span>
+            </div>
+          </div>
+          <div class="absolute left-[8%] top-[18%] bottom-[18%] w-[1px] bg-gradient-to-b from-transparent via-white/10 to-transparent"></div>
+          <div class="absolute right-[12%] top-[12%] bottom-[22%] w-[1px] bg-gradient-to-b from-transparent via-white/10 to-transparent"></div>
+          <div class="absolute left-[8%] right-[12%] top-[50%] h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+          <div class="absolute bottom-0 left-0 right-0 flex flex-wrap items-center justify-between gap-3 border-t border-white/10 bg-black/40 px-5 md:px-8 py-4 backdrop-blur-md">
+            <div class="flex items-center gap-6 text-[10px] tracking-[0.14em] uppercase text-white/60">
+              <span>3DS MAX 2024</span>
+              <span class="hidden md:inline">CORONA 10</span>
+              <span class="hidden md:inline">3840×2160</span>
+            </div>
+            <div class="flex items-center gap-2 text-[10px] tracking-[0.14em] uppercase text-white/40">
+              <span class="h-px w-8 bg-white/20 hidden md:block"></span>
+              <span>MINIMAL VILLA • JUBILEE HILLS • STUDY 01</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-4 grid grid-cols-3 gap-3 md:gap-4">
+        <div class="rounded-[12px] border border-[var(--border-soft)] bg-[var(--bg-soft)] px-4 py-3 md:px-5 md:py-4 flex justify-between items-center">
+          <span class="text-[10px] tracking-[0.16em] uppercase text-[var(--text-dim)]">Turnaround</span>
+          <span class="text-[12px] font-medium tracking-[0.02em]">48-72H</span>
+        </div>
+        <div class="rounded-[12px] border border-[var(--border-soft)] bg-[var(--bg-soft)] px-4 py-3 md:px-5 md:py-4 flex justify-between items-center">
+          <span class="text-[10px] tracking-[0.16em] uppercase text-[var(--text-dim)]">Revision</span>
+          <span class="text-[12px] font-medium tracking-[0.02em]">Unlimited*</span>
+        </div>
+        <div class="rounded-[12px] border border-[var(--border-soft)] bg-[var(--bg-soft)] px-4 py-3 md:px-5 md:py-4 flex justify-between items-center">
+          <span class="text-[10px] tracking-[0.16em] uppercase text-[var(--text-dim)]">Delivery</span>
+          <span class="text-[12px] font-medium tracking-[0.02em]">4K + RAW</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What I Do -->
+  <section id="about" class="border-t border-[var(--border-soft)] bg-[var(--bg-soft)]">
+    <div class="mx-auto max-w-[1440px] px-6 md:px-10 lg:px-12 py-16 md:py-24">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12 md:mb-16">
+        <h2 class="serif text-[42px] md:text-[64px] leading-[0.9] tracking-[-0.03em]">What I Do</h2>
+        <p class="max-w-[360px] text-[13px] leading-[1.7] text-[var(--text-muted)]">Not just pretty renders. I translate 2D drawings, moodboards and references into spatial stories that help clients approve faster and sell earlier.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-[var(--border-soft)] border border-[var(--border-soft)] rounded-[18px] overflow-hidden">
+        <div class="group bg-[var(--bg)] p-7 md:p-8 lg:p-10 hover:bg-[var(--bg-elevated)] transition-colors">
+          <div class="flex items-start justify-between mb-8">
+            <span class="text-[11px] tracking-[0.18em] text-[var(--text-dim)]">01 / 03</span>
+            <div class="h-9 w-9 grid place-items-center rounded-full border border-[var(--border)] text-[var(--text-muted)] group-hover:text-[var(--text)] group-hover:border-[var(--text)] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sun" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></div>
+          </div>
+          <h3 class="serif text-[26px] leading-[0.95] mb-4">Interior Visualization</h3>
+          <p class="text-[13.5px] leading-[1.7] text-[var(--text-muted)] mb-8">Warm, lived-in interiors with accurate materials, daylight studies, and styling that feels human. Bedrooms, kitchens, cafes, retail.</p>
+          <div class="space-y-2">
+            <div class="flex items-center gap-2 text-[11px] tracking-[0.08em] uppercase text-[var(--text-dim)]"><span class="h-[3px] w-[3px] rounded-full bg-[var(--text-dim)]"></span>Residential &amp; Hospitality</div>
+            <div class="flex items-center gap-2 text-[11px] tracking-[0.08em] uppercase text-[var(--text-dim)]"><span class="h-[3px] w-[3px] rounded-full bg-[var(--text-dim)]"></span>Lighting Studies</div>
+            <div class="flex items-center gap-2 text-[11px] tracking-[0.08em] uppercase text-[var(--text-dim)]"><span class="h-[3px] w-[3px] rounded-full bg-[var(--text-dim)]"></span>Material Accuracy</div>
+          </div>
+        </div>
+        <div class="group bg-[var(--bg)] p-7 md:p-8 lg:p-10 hover:bg-[var(--bg-elevated)] transition-colors">
+          <div class="flex items-start justify-between mb-8">
+            <span class="text-[11px] tracking-[0.18em] text-[var(--text-dim)]">02 / 03</span>
+            <div class="h-9 w-9 grid place-items-center rounded-full border border-[var(--border)] text-[var(--text-muted)] group-hover:text-[var(--text)] group-hover:border-[var(--text)] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layers" aria-hidden="true"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"/><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"/></svg></div>
+          </div>
+          <h3 class="serif text-[26px] leading-[0.95] mb-4">Exterior / ArchViz</h3>
+          <p class="text-[13.5px] leading-[1.7] text-[var(--text-muted)] mb-8">Context-aware exteriors - from Jubilee Hills villas to Gachibowli high-rises. Day, dusk, and night scenarios.</p>
+          <div class="space-y-2">
+            <div class="flex items-center gap-2 text-[11px] tracking-[0.08em] uppercase text-[var(--text-dim)]"><span class="h-[3px] w-[3px] rounded-full bg-[var(--text-dim)]"></span>Villas &amp; High-Rise</div>
+            <div class="flex items-center gap-2 text-[11px] tracking-[0.08em] uppercase text-[var(--text-dim)]"><span class="h-[3px] w-[3px] rounded-full bg-[var(--text-dim)]"></span>Landscape Integration</div>
+            <div class="flex items-center gap-2 text-[11px] tracking-[0.08em] uppercase text-[var(--text-dim)]"><span class="h-[3px] w-[3px] rounded-full bg-[var(--text-dim)]"></span>Night Lighting</div>
+          </div>
+        </div>
+        <div class="group bg-[var(--bg)] p-7 md:p-8 lg:p-10 hover:bg-[var(--bg-elevated)] transition-colors">
+          <div class="flex items-start justify-between mb-8">
+            <span class="text-[11px] tracking-[0.18em] text-[var(--text-dim)]">03 / 03</span>
+            <div class="h-9 w-9 grid place-items-center rounded-full border border-[var(--border)] text-[var(--text-muted)] group-hover:text-[var(--text)] group-hover:border-[var(--text)] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-box" aria-hidden="true"><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></svg></div>
+          </div>
+          <h3 class="serif text-[26px] leading-[0.95] mb-4">Product &amp; Commercial</h3>
+          <p class="text-[13.5px] leading-[1.7] text-[var(--text-muted)] mb-8">Studio-grade product renders for e-commerce, ads, and packaging. Focus on CMF and macro detail.</p>
+          <div class="space-y-2">
+            <div class="flex items-center gap-2 text-[11px] tracking-[0.08em] uppercase text-[var(--text-dim)]"><span class="h-[3px] w-[3px] rounded-full bg-[var(--text-dim)]"></span>Beauty &amp; Lifestyle</div>
+            <div class="flex items-center gap-2 text-[11px] tracking-[0.08em] uppercase text-[var(--text-dim)]"><span class="h-[3px] w-[3px] rounded-full bg-[var(--text-dim)]"></span>Studio Lighting</div>
+            <div class="flex items-center gap-2 text-[11px] tracking-[0.08em] uppercase text-[var(--text-dim)]"><span class="h-[3px] w-[3px] rounded-full bg-[var(--text-dim)]"></span>Packshot Ready</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selected Works -->
+  <section id="works" class="mx-auto max-w-[1440px] px-6 md:px-10 lg:px-12 py-16 md:py-24">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10">
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="h-px w-12 bg-[var(--text)]"></span>
+          <span class="text-[11px] tracking-[0.18em] uppercase">Selected Works — 2023—24</span>
+        </div>
+        <h2 class="serif text-[42px] md:text-[72px] leading-[0.9] tracking-[-0.03em]">Selected Works</h2>
+      </div>
+      <div class="text-[13px] leading-[1.6] text-[var(--text-muted)] max-w-[300px]">Ten recent studies. Hover to inspect render specs. Click to expand intent.</div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-4 md:gap-5 auto-rows-[auto]">
+
+      <div class="md:col-span-7 work-card group relative rounded-[18px] border border-[var(--border-soft)] overflow-hidden bg-[var(--bg-soft)] cursor-pointer transition-all duration-300" tabindex="0">
+        <div class="relative aspect-[4/3] md:aspect-[16/11] overflow-hidden bg-gradient-to-br from-[#3b2f24] via-[#231d16] to-[#12100e]">
+          <img class="work-img" src="images/high-rise-golden-hour.jpg" alt="High-rise apartment tower with terracotta fins and glass balconies at golden hour" style="object-position:50% 35%" width="1280" height="720" decoding="async">
+          <div class="work-shade"></div>
+          <div class="absolute bottom-0 left-0 p-4 text-[10px] tracking-[0.3em] uppercase text-white/60">Exterior • 2024</div>
+          <div class="absolute top-0 left-0 right-0 flex items-center justify-between p-4">
+            <div class="flex gap-1.5">
+              <span class="h-[7px] w-[7px] rounded-full bg-white/20"></span>
+              <span class="h-[7px] w-[7px] rounded-full bg-white/20"></span>
+              <span class="h-[7px] w-[7px] rounded-full bg-white/20"></span>
+            </div>
+            <div class="rounded-full bg-black/30 border border-white/10 px-2.5 py-1 text-[9px] tracking-[0.12em] uppercase text-white/60 backdrop-blur">3ds Max + Corona + Photoshop</div>
+          </div>
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
+        </div>
+        <div class="flex items-start justify-between gap-4 p-5 md:p-6">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-[10px] tracking-[0.16em] uppercase text-[var(--text-dim)]">01</span>
+              <span class="h-px w-6 bg-[var(--border)]"></span>
+              <span class="text-[10px] tracking-[0.14em] uppercase text-[var(--text-muted)]">Gachibowli</span>
+            </div>
+            <h3 class="serif text-[20px] md:text-[22px] leading-[1] group-hover:tracking-[-0.01em] transition-all">High-Rise Exterior - Golden Hour</h3>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-[11px] text-[var(--text-dim)]">2024</span>
+            <div class="work-arrow h-8 w-8 grid place-items-center rounded-full border transition-colors border-[var(--border)] text-[var(--text-muted)] group-hover:border-[var(--text)] group-hover:text-[var(--text)]"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></div>
+          </div>
+        </div>
+        <div class="work-detail grid transition-all duration-500 overflow-hidden grid-rows-[0fr] opacity-0">
+          <div class="overflow-hidden">
+            <div class="border-t border-[var(--border-soft)] bg-[var(--bg-elevated)] px-5 md:px-6 py-4 flex flex-wrap gap-2">
+              <span class="rounded-full border border-[var(--border)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-muted)]">3ds Max</span>
+              <span class="rounded-full border border-[var(--border)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-muted)]">Corona</span>
+              <span class="rounded-full border border-[var(--border)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-muted)]">Photoshop</span>
+              <span class="ml-auto text-[10px] tracking-[0.12em] uppercase text-[var(--text-dim)]">4K • ACES • 2500 SAMPLES</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="md:col-span-5 work-card group relative rounded-[18px] border border-[var(--border-soft)] overflow-hidden bg-[var(--bg-soft)] cursor-pointer transition-all duration-300" tabindex="0">
+        <div class="relative aspect-[4/3] md:aspect-[16/11] overflow-hidden bg-gradient-to-br from-[#3a3330] via-[#24211f] to-[#131111]">
+          <img class="work-img" src="images/reception-lobby.jpg" alt="Hotel-style reception lobby with a gold sculpted desk and ring chandeliers" style="object-position:50% 50%" width="1280" height="720" decoding="async">
+          <div class="work-shade"></div>
+          <div class="absolute bottom-0 left-0 p-4 text-[10px] tracking-[0.3em] uppercase text-white/60">Interior • 2024</div>
+          <div class="absolute top-0 left-0 right-0 flex items-center justify-between p-4">
+            <div class="flex gap-1.5">
+              <span class="h-[7px] w-[7px] rounded-full bg-white/20"></span>
+              <span class="h-[7px] w-[7px] rounded-full bg-white/20"></span>
+              <span class="h-[7px] w-[7px] rounded-full bg-white/20"></span>
+            </div>
+            <div class="rounded-full bg-black/30 border border-white/10 px-2.5 py-1 text-[9px] tracking-[0.12em] uppercase text-white/60 backdrop-blur">3ds Max + Corona + Photoshop</div>
+          </div>
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
+        </div>
+        <div class="flex items-start justify-between gap-4 p-5 md:p-6">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-[10px] tracking-[0.16em] uppercase text-[var(--text-dim)]">02</span>
+              <span class="h-px w-6 bg-[var(--border)]"></span>
+              <span class="text-[10px] tracking-[0.14em] uppercase text-[var(--text-muted)]">Hitech City</span>
+            </div>
+            <h3 class="serif text-[20px] md:text-[22px] leading-[1] group-hover:tracking-[-0.01em] transition-all">Grand Reception Lobby</h3>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-[11px] text-[var(--text-dim)]">2024</span>
+            <div class="work-arrow h-8 w-8 grid place-items-center rounded-full border transition-colors border-[var(--border)] text-[var(--text-muted)] group-hover:border-[var(--text)] group-hover:text-[var(--text)]"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></div>
+          </div>
+        </div>
+        <div class="work-detail grid transition-all duration-500 overflow-hidden grid-rows-[0fr] opacity-0">
+          <div class="overflow-hidden">
+            <div class="border-t border-[var(--border-soft)] bg-[var(--bg-elevated)] px-5 md:px-6 py-4 flex flex-wrap gap-2">
+              <span class="rounded-full border border-[var(--border)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-muted)]">3ds Max</span>
+              <span class="rounded-full border border-[var(--border)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-muted)]">Corona</span>
+              <span class="rounded-full border border-[var(--border)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-muted)]">Photoshop</span>
+              <span class="ml-auto text-[10px] tracking-[0.12em] uppercase text-[var(--text-dim)]">4K • ACES • 2500 SAMPLES</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="md:col-span-5 work-card group relative rounded-[18px] border border-[var(--border-soft)] overflow-hidden bg-[var(--bg-soft)] cursor-pointer transition-all duration-300" tabindex="0">
+        <div class="relative aspect-[4/3] md:aspect-[16/11] overflow-hidden bg-gradient-to-br from-[#3a3330] via-[#24211f] to-[#131111]">
+          <img class="work-img" src="images/luxury-living-lounge.jpg" alt="Large cream living room with marble feature wall, twin chandeliers and sofas" style="object-position:50% 50%" width="1280" height="720" decoding="async">
+          <div class="work-shade"></div>
+          <div class="absolute bottom-0 left-0 p-4 text-[10px] tracking-[0.3em] uppercase text-white/60">Interior • 2024</div>
+          <div class="absolute top-0 left-0 right-0 flex items-center justify-between p-4">
+            <div class="flex gap-1.5">
+              <span class="h-[7px] w-[7px] rounded-full bg-white/20"></span>
+              <span class="h-[7px] w-[7px] rounded-full bg-white/20"></span>
+              <span class="h-[7px] w-[7px] rounded-full bg-white/20"></span>
+            </div>
+            <div class="rounded-full bg-black/30 border border-white/10 px-2.5 py-1 text-[9px] tracking-[0.12em] uppercase text-white/60 backdrop-blur">3ds Max + Corona + Photoshop</div>
+          </div>
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
+        </div>
+        <div class="flex items-start justify-between gap-4 p-5 md:p-6">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-[10px] tracking-[0.16em] uppercase text-[var(--text-dim)]">03</span>
+              <span class="h-px w-6 bg-[var(--border)]"></span>
+              <span class="text-[10px] tracking-[0.14em] uppercase text-[var(--text-muted)]">Jubilee Hills</span>
+            </div>
+            <h3 class="serif text-[20px] md:text-[22px] leading-[1] group-hover:tracking-[-0.01em] transition-all">Luxury Living Lounge</h3>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-[11px] text-[var(--text-dim)]">2024</span>
+            <div class="work-arrow h-8 w-8 grid place-items-center rounded-full border transition-colors border-[var(--border)] text-[var(--text-muted)] group-hover:border-[var(--text)] group-hover:text-[var(--text)]"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></div>
+          </div>
+        </div>
+        <div class="work-detail grid transition-all duration-500 overflow-hidden grid-rows-[0fr] opacity-0">
+          <div class="overflow-hidden">
+            <div class="border-t border-[var(--border-soft)] bg-[var(--bg-elevated)] px-5 md:px-6 py-4 flex flex-wrap gap-2">
+              <span class="rounded-full border border-[var(--border)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-muted)]">3ds Max</span>
+              <span class="rounded-full border border-[var(--border)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-muted)]">Corona</span>
+              <span class="rounded-full border border-[var(--border)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-muted)]">Photoshop</span>
+              <span class="ml-auto text-[10px] tracking-[0.12em] uppercase text-[var(--text-dim)]">4K • ACES • 2500 SAMPLES</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="md:col-span-7 work-card group relative rounded-[18px] border border-[var(--border-soft)] overflow-hidden bg-[var(--bg-soft)] cursor-pointer transition-all duration-300" tabindex="0">
+        <div class="relative aspect-[4/3] md:aspect-[16/11] overflow-hidden bg-gradient-to-br from-[#1a1f2e] via-[#12151e] to-[#0a0c12]">
+          <img class="work-img" src="images/skylight-indoor-pool.jpg" alt="Indoor pool under a glass roof with mountain views and timber decking" style="object-position:50% 50%" width="1280" height="720" decoding="async">
+          <div class="work-shade"></div>
+          <div class="absolute bottom-0 left-0 p-4 text-[10px] tracking-[0.3em] uppercase text-white/60">Interior • 2023</div>
+          <div class="absolute top-0 left-0 right-0 flex items-center justify-between p-4">
+            <div class="flex gap-1.5">
+              <span class="h-[7px] w-[7px] rounded-full bg-white/20"></span>
+              <span class="h-[7px] w-[7px] rounded-full bg-white/20"></span>
+              <span class="h-[7px] w-[7px] rounded-full bg-white/20"></span>
+            </div>
+            <div class="rounded-full bg-black/30 border border-white/10 px-2.5 py-1 text-[9px] tracking-[0.12em] uppercase text-white/60 backdrop-blur">3ds Max + V-Ray + Photoshop</div>
+          </div>
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
+        </div>
+        <div class="flex items-start justify-between gap-4 p-5 md:p-6">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-[10px] tracking-[0.16em] uppercase text-[var(--text-dim)]">04</span>
+              <span class="h-px w-6 bg-[var(--border)]"></span>
+              <span class="text-[10px] tracking-[0.14em] uppercase text-[var(--text-muted)]">Gachibowli</span>
+            </div>
+            <h3 class="serif text-[20px] md:text-[22px] leading-[1] group-hover:tracking-[-0.01em] transition-all">Skylight Indoor Pool</h3>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-[11px] text-[var(--text-dim)]">2023</span>
+            <div class="work-arrow h-8 w-8 grid place-items-center rounded-full border transition-colors border-[var(--border)] text-[var(--text-muted)] group-hover:border-[var(--text)] group-hover:text-[var(--text)]"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></div>
+          </div>
+        </div>
+        <div class="work-detail grid transition-all duration-500 overflow-hidden grid-rows-[0fr] opacity-0">
+          <div class="overflow-hidden">
+            <div class="border-t border-[var(--border-soft)] bg-[var(--bg-elevated)] px-5 md:px-6 py-4 flex flex-wrap gap-2">
+              <span class="rounded-full border border-[var(--border)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-muted)]">3ds Max</span>
+              <span class="rounded-full border border-[var(--border)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-muted)]">V-Ray</span>
+              <span class="rounded-full border border-[var(--border)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-muted)]">Photoshop</span>
+              <span class="ml-auto text-[10px] tracking-[0.12em] uppercase text-[var(--text-dim)]">4K • ACES • 2500 SAMPLES</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="md:col-span-7 work-card group relative rounded-[18px] border border-[var(--border-soft)] overflow-hidden bg-[var(--bg-soft)] cursor-pointer transition-all duration-300" tabindex="0">
+        <div class="relative aspect-[4/3] md:aspect-[16/11] overflow-hidden bg-gradient-to-br from-[#1a1f2e] via-[#12151e] to-[#0a0c12]">
+          <img class="work-img" src="images/rooftop-lounge-bar.jpg" alt="Glass-roofed rooftop lounge and bar at dusk with lounge seating" style="object-position:50% 50%" width="1280" height="720" decoding="async">
+          <div class="work-shade"></div>
+          <div class="absolute bottom-0 left-0 p-4 text-[10px] tracking-[0.3em] uppercase text-white/60">Interior • 2024</div>
+          <div class="absolute top-0 left-0 right-0 flex items-center justify-between p-4">
+            <div class="flex gap-1.5">
+              <span class="h-[7px] w-[7px] rounded-full bg-white/20"></span>
+              <span class="h-[7px] w-[7px] rounded-full bg-white/20"></span>
+              <span class="h-[7px] w-[7px] rounded-full bg-white/20"></span>
+            </div>
+            <div class="rounded-full bg-black/30 border border-white/10 px-2.5 py-1 text-[9px] tracking-[0.12em] uppercase text-white/60 backdrop-blur">3ds Max + Corona + Photoshop</div>
+          </div>
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
+        </div>
+        <div class="flex items-start justify-between gap-4 p-5 md:p-6">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-[10px] tracking-[0.16em] uppercase text-[var(--text-dim)]">05</span>
+              <span class="h-px w-6 bg-[var(--border)]"></span>
+              <span class="text-[10px] tracking-[0.14em] uppercase text-[var(--text-muted)]">Banjara Hills</span>
+            </div>
+            <h3 class="serif text-[20px] md:text-[22px] leading-[1] group-hover:tracking-[-0.01em] transition-all">Rooftop Lounge Bar</h3>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-[11px] text-[var(--text-dim)]">2024</span>
+            <div class="work-arrow h-8 w-8 grid place-items-center rounded-full border transition-colors border-[var(--border)] text-[var(--text-muted)] group-hover:border-[var(--text)] group-hover:text-[var(--text)]"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></div>
+          </div>
+        </div>
+        <div class="work-detail grid transition-all duration-500 overflow-hidden grid-rows-[0fr] opacity-0">
+          <div class="overflow-hidden">
+            <div class="border-t border-[var(--border-soft)] bg-[var(--bg-elevated)] px-5 md:px-6 py-4 flex flex-wrap gap-2">
+              <span class="rounded-full border border-[var(--border)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-muted)]">3ds Max</span>
+              <span class="rounded-full border border-[var(--border)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-muted)]">Corona</span>
+              <span class="rounded-full border border-[var(--border)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-muted)]">Photoshop</span>
+              <span class="ml-auto text-[10px] tracking-[0.12em] uppercase text-[var(--text-dim)]">4K • ACES • 2500 SAMPLES</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="md:col-span-5 work-card group relative rounded-[18px] border border-[var(--border-soft)] overflow-hidden bg-[var(--bg-soft)] cursor-pointer transition-all duration-300" tabindex="0">
+        <div class="relative aspect-[4/3] md:aspect-[16/11] overflow-hidden bg-gradient-to-br from-[#1a1f2e] via-[#12151e] to-[#0a0c12]">
+          <img class="work-img" src="images/rooftop-lounge-blue-hour.jpg" alt="Rooftop lounge lighting study in cool blue hour tones" style="object-position:50% 50%" width="1280" height="720" decoding="async">
+          <div class="work-shade"></div>
+          <div class="absolute bottom-0 left-0 p-4 text-[10px] tracking-[0.3em] uppercase text-white/60">Lighting Study • 2024</div>
+          <div class="absolute top-0 left-0 right-0 flex items-center justify-between p-4">
+            <div class="flex gap-1.5">
+              <span class="h-[7px] w-[7px] rounded-full bg-white/20"></span>
+              <span class="h-[7px] w-[7px] rounded-full bg-white/20"></span>
+              <span class="h-[7px] w-[7px] rounded-full bg-white/20"></span>
+            </div>
+            <div class="rounded-full bg-black/30 border border-white/10 px-2.5 py-1 text-[9px] tracking-[0.12em] uppercase text-white/60 backdrop-blur">3ds Max + Corona + Photoshop</div>
+          </div>
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
+        </div>
+        <div class="flex items-start justify-between gap-4 p-5 md:p-6">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-[10px] tracking-[0.16em] uppercase text-[var(--text-dim)]">06</span>
+              <span class="h-px w-6 bg-[var(--border)]"></span>
+              <span class="text-[10px] tracking-[0.14em] uppercase text-[var(--text-muted)]">Banjara Hills</span>
+            </div>
+            <h3 class="serif text-[20px] md:text-[22px] leading-[1] group-hover:tracking-[-0.01em] transition-all">Rooftop Lounge - Blue Hour</h3>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-[11px] text-[var(--text-dim)]">2024</span>
+            <div class="work-arrow h-8 w-8 grid place-items-center rounded-full border transition-colors border-[var(--border)] text-[var(--text-muted)] group-hover:border-[var(--text)] group-hover:text-[var(--text)]"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></div>
+          </div>
+        </div>
+        <div class="work-detail grid transition-all duration-500 overflow-hidden grid-rows-[0fr] opacity-0">
+          <div class="overflow-hidden">
+            <div class="border-t border-[var(--border-soft)] bg-[var(--bg-elevated)] px-5 md:px-6 py-4 flex flex-wrap gap-2">
+              <span class="rounded-full border border-[var(--border)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-muted)]">3ds Max</span>
+              <span class="rounded-full border border-[var(--border)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-muted)]">Corona</span>
+              <span class="rounded-full border border-[var(--border)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-muted)]">Photoshop</span>
+              <span class="ml-auto text-[10px] tracking-[0.12em] uppercase text-[var(--text-dim)]">4K • ACES • 2500 SAMPLES</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="md:col-span-5 work-card group relative rounded-[18px] border border-[var(--border-soft)] overflow-hidden bg-[var(--bg-soft)] cursor-pointer transition-all duration-300" tabindex="0">
+        <div class="relative aspect-[4/3] md:aspect-[16/11] overflow-hidden bg-gradient-to-br from-[#3b2f24] via-[#231d16] to-[#12100e]">
+          <img class="work-img" src="images/sky-gym.jpg" alt="High-floor gym with rowing machines, punching bags and orange ceiling lighting" style="object-position:50% 50%" width="1280" height="720" decoding="async">
+          <div class="work-shade"></div>
+          <div class="absolute bottom-0 left-0 p-4 text-[10px] tracking-[0.3em] uppercase text-white/60">Interior • 2023</div>
+          <div class="absolute top-0 left-0 right-0 flex items-center justify-between p-4">
+            <div class="flex gap-1.5">
+              <span class="h-[7px] w-[7px] rounded-full bg-white/20"></span>
+              <span class="h-[7px] w-[7px] rounded-full bg-white/20"></span>
+              <span class="h-[7px] w-[7px] rounded-full bg-white/20"></span>
+            </div>
+            <div class="rounded-full bg-black/30 border border-white/10 px-2.5 py-1 text-[9px] tracking-[0.12em] uppercase text-white/60 backdrop-blur">3ds Max + Corona + Photoshop</div>
+          </div>
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
+        </div>
+        <div class="flex items-start justify-between gap-4 p-5 md:p-6">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-[10px] tracking-[0.16em] uppercase text-[var(--text-dim)]">07</span>
+              <span class="h-px w-6 bg-[var(--border)]"></span>
+              <span class="text-[10px] tracking-[0.14em] uppercase text-[var(--text-muted)]">Hitech City</span>
+            </div>
+            <h3 class="serif text-[20px] md:text-[22px] leading-[1] group-hover:tracking-[-0.01em] transition-all">Sky Gym</h3>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-[11px] text-[var(--text-dim)]">2023</span>
+            <div class="work-arrow h-8 w-8 grid place-items-center rounded-full border transition-colors border-[var(--border)] text-[var(--text-muted)] group-hover:border-[var(--text)] group-hover:text-[var(--text)]"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></div>
+          </div>
+        </div>
+        <div class="work-detail grid transition-all duration-500 overflow-hidden grid-rows-[0fr] opacity-0">
+          <div class="overflow-hidden">
+            <div class="border-t border-[var(--border-soft)] bg-[var(--bg-elevated)] px-5 md:px-6 py-4 flex flex-wrap gap-2">
+              <span class="rounded-full border border-[var(--border)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-muted)]">3ds Max</span>
+              <span class="rounded-full border border-[var(--border)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-muted)]">Corona</span>
+              <span class="rounded-full border border-[var(--border)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-muted)]">Photoshop</span>
+              <span class="ml-auto text-[10px] tracking-[0.12em] uppercase text-[var(--text-dim)]">4K • ACES • 2500 SAMPLES</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="md:col-span-7 work-card group relative rounded-[18px] border border-[var(--border-soft)] overflow-hidden bg-[var(--bg-soft)] cursor-pointer transition-all duration-300" tabindex="0">
+        <div class="relative aspect-[4/3] md:aspect-[16/11] overflow-hidden bg-gradient-to-br from-[#2c2c2c] via-[#1f1f1f] to-[#121212]">
+          <img class="work-img" src="images/coworking-space.jpg" alt="Industrial-style coworking space with timber booths and long shared desks" style="object-position:50% 50%" width="1280" height="720" decoding="async">
+          <div class="work-shade"></div>
+          <div class="absolute bottom-0 left-0 p-4 text-[10px] tracking-[0.3em] uppercase text-white/60">Interior • 2023</div>
+          <div class="absolute top-0 left-0 right-0 flex items-center justify-between p-4">
+            <div class="flex gap-1.5">
+              <span class="h-[7px] w-[7px] rounded-full bg-white/20"></span>
+              <span class="h-[7px] w-[7px] rounded-full bg-white/20"></span>
+              <span class="h-[7px] w-[7px] rounded-full bg-white/20"></span>
+            </div>
+            <div class="rounded-full bg-black/30 border border-white/10 px-2.5 py-1 text-[9px] tracking-[0.12em] uppercase text-white/60 backdrop-blur">3ds Max + V-Ray + Photoshop</div>
+          </div>
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
+        </div>
+        <div class="flex items-start justify-between gap-4 p-5 md:p-6">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-[10px] tracking-[0.16em] uppercase text-[var(--text-dim)]">08</span>
+              <span class="h-px w-6 bg-[var(--border)]"></span>
+              <span class="text-[10px] tracking-[0.14em] uppercase text-[var(--text-muted)]">Madhapur</span>
+            </div>
+            <h3 class="serif text-[20px] md:text-[22px] leading-[1] group-hover:tracking-[-0.01em] transition-all">Coworking Space</h3>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-[11px] text-[var(--text-dim)]">2023</span>
+            <div class="work-arrow h-8 w-8 grid place-items-center rounded-full border transition-colors border-[var(--border)] text-[var(--text-muted)] group-hover:border-[var(--text)] group-hover:text-[var(--text)]"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></div>
+          </div>
+        </div>
+        <div class="work-detail grid transition-all duration-500 overflow-hidden grid-rows-[0fr] opacity-0">
+          <div class="overflow-hidden">
+            <div class="border-t border-[var(--border-soft)] bg-[var(--bg-elevated)] px-5 md:px-6 py-4 flex flex-wrap gap-2">
+              <span class="rounded-full border border-[var(--border)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-muted)]">3ds Max</span>
+              <span class="rounded-full border border-[var(--border)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-muted)]">V-Ray</span>
+              <span class="rounded-full border border-[var(--border)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-muted)]">Photoshop</span>
+              <span class="ml-auto text-[10px] tracking-[0.12em] uppercase text-[var(--text-dim)]">4K • ACES • 2500 SAMPLES</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="md:col-span-7 work-card group relative rounded-[18px] border border-[var(--border-soft)] overflow-hidden bg-[var(--bg-soft)] cursor-pointer transition-all duration-300" tabindex="0">
+        <div class="relative aspect-[4/3] md:aspect-[16/11] overflow-hidden bg-gradient-to-br from-[#3a3330] via-[#24211f] to-[#131111]">
+          <img class="work-img" src="images/yoga-studio.jpg" alt="Bright yoga studio with aerial hammocks, mats and a lotus wall motif" style="object-position:50% 50%" width="1280" height="720" decoding="async">
+          <div class="work-shade"></div>
+          <div class="absolute bottom-0 left-0 p-4 text-[10px] tracking-[0.3em] uppercase text-white/60">Interior • 2023</div>
+          <div class="absolute top-0 left-0 right-0 flex items-center justify-between p-4">
+            <div class="flex gap-1.5">
+              <span class="h-[7px] w-[7px] rounded-full bg-white/20"></span>
+              <span class="h-[7px] w-[7px] rounded-full bg-white/20"></span>
+              <span class="h-[7px] w-[7px] rounded-full bg-white/20"></span>
+            </div>
+            <div class="rounded-full bg-black/30 border border-white/10 px-2.5 py-1 text-[9px] tracking-[0.12em] uppercase text-white/60 backdrop-blur">3ds Max + Corona + Photoshop</div>
+          </div>
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
+        </div>
+        <div class="flex items-start justify-between gap-4 p-5 md:p-6">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-[10px] tracking-[0.16em] uppercase text-[var(--text-dim)]">09</span>
+              <span class="h-px w-6 bg-[var(--border)]"></span>
+              <span class="text-[10px] tracking-[0.14em] uppercase text-[var(--text-muted)]">Chanda Nagar</span>
+            </div>
+            <h3 class="serif text-[20px] md:text-[22px] leading-[1] group-hover:tracking-[-0.01em] transition-all">Yoga & Wellness Studio</h3>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-[11px] text-[var(--text-dim)]">2023</span>
+            <div class="work-arrow h-8 w-8 grid place-items-center rounded-full border transition-colors border-[var(--border)] text-[var(--text-muted)] group-hover:border-[var(--text)] group-hover:text-[var(--text)]"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></div>
+          </div>
+        </div>
+        <div class="work-detail grid transition-all duration-500 overflow-hidden grid-rows-[0fr] opacity-0">
+          <div class="overflow-hidden">
+            <div class="border-t border-[var(--border-soft)] bg-[var(--bg-elevated)] px-5 md:px-6 py-4 flex flex-wrap gap-2">
+              <span class="rounded-full border border-[var(--border)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-muted)]">3ds Max</span>
+              <span class="rounded-full border border-[var(--border)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-muted)]">Corona</span>
+              <span class="rounded-full border border-[var(--border)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-muted)]">Photoshop</span>
+              <span class="ml-auto text-[10px] tracking-[0.12em] uppercase text-[var(--text-dim)]">4K • ACES • 2500 SAMPLES</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="md:col-span-5 work-card group relative rounded-[18px] border border-[var(--border-soft)] overflow-hidden bg-[var(--bg-soft)] cursor-pointer transition-all duration-300" tabindex="0">
+        <div class="relative aspect-[4/3] md:aspect-[16/11] overflow-hidden bg-gradient-to-br from-[#2e352d] via-[#1e2220] to-[#111412]">
+          <img class="work-img" src="images/billiards-room.jpg" alt="Private billiards room with a pool table, green display niches and warm cove lighting" style="object-position:50% 55%" width="1280" height="720" decoding="async">
+          <div class="work-shade"></div>
+          <div class="absolute bottom-0 left-0 p-4 text-[10px] tracking-[0.3em] uppercase text-white/60">Interior • 2023</div>
+          <div class="absolute top-0 left-0 right-0 flex items-center justify-between p-4">
+            <div class="flex gap-1.5">
+              <span class="h-[7px] w-[7px] rounded-full bg-white/20"></span>
+              <span class="h-[7px] w-[7px] rounded-full bg-white/20"></span>
+              <span class="h-[7px] w-[7px] rounded-full bg-white/20"></span>
+            </div>
+            <div class="rounded-full bg-black/30 border border-white/10 px-2.5 py-1 text-[9px] tracking-[0.12em] uppercase text-white/60 backdrop-blur">3ds Max + Corona + Photoshop</div>
+          </div>
+          <div class="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500"></div>
+        </div>
+        <div class="flex items-start justify-between gap-4 p-5 md:p-6">
+          <div>
+            <div class="flex items-center gap-2 mb-1">
+              <span class="text-[10px] tracking-[0.16em] uppercase text-[var(--text-dim)]">10</span>
+              <span class="h-px w-6 bg-[var(--border)]"></span>
+              <span class="text-[10px] tracking-[0.14em] uppercase text-[var(--text-muted)]">Jubilee Hills</span>
+            </div>
+            <h3 class="serif text-[20px] md:text-[22px] leading-[1] group-hover:tracking-[-0.01em] transition-all">Billiards Room</h3>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="text-[11px] text-[var(--text-dim)]">2023</span>
+            <div class="work-arrow h-8 w-8 grid place-items-center rounded-full border transition-colors border-[var(--border)] text-[var(--text-muted)] group-hover:border-[var(--text)] group-hover:text-[var(--text)]"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></div>
+          </div>
+        </div>
+        <div class="work-detail grid transition-all duration-500 overflow-hidden grid-rows-[0fr] opacity-0">
+          <div class="overflow-hidden">
+            <div class="border-t border-[var(--border-soft)] bg-[var(--bg-elevated)] px-5 md:px-6 py-4 flex flex-wrap gap-2">
+              <span class="rounded-full border border-[var(--border)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-muted)]">3ds Max</span>
+              <span class="rounded-full border border-[var(--border)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-muted)]">Corona</span>
+              <span class="rounded-full border border-[var(--border)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-muted)]">Photoshop</span>
+              <span class="ml-auto text-[10px] tracking-[0.12em] uppercase text-[var(--text-dim)]">4K • ACES • 2500 SAMPLES</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-8 flex justify-center">
+      <div class="inline-flex items-center gap-2 rounded-full border border-[var(--border-soft)] bg-[var(--bg-soft)] px-5 py-2.5 text-[11px] tracking-[0.14em] uppercase text-[var(--text-muted)]"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg>All renders are final outputs — no AI upscaling</div>
+    </div>
+  </section>
+
+  <!-- Breakdown -->
+  <section id="breakdown" class="border-y border-[var(--border-soft)] bg-[var(--bg)]">
+    <div class="mx-auto max-w-[1440px] px-6 md:px-10 lg:px-12 py-16 md:py-24">
+      <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-12 lg:gap-16 items-start">
+        <div class="lg:sticky lg:top-[96px]">
+          <div class="inline-flex items-center gap-2 rounded-full border border-[var(--border)] px-3 py-1 mb-6">
+            <span class="h-1.5 w-1.5 rounded-full bg-[var(--text)]"></span>
+            <span class="text-[10px] tracking-[0.16em] uppercase text-[var(--text-muted)]">From DWG to Final Frame</span>
+          </div>
+          <h2 class="serif text-[44px] md:text-[56px] leading-[0.9] tracking-[-0.03em] mb-6">Breakdown:<br>How I Build<br><span class="italic text-[var(--text-muted)]">Photoreal</span></h2>
+          <p class="text-[14px] leading-[1.7] text-[var(--text-muted)] max-w-[360px] mb-8">Every image follows the same disciplined pipeline. No shortcuts. This is why clients get consistent results, not lottery renders.</p>
+          <div class="rounded-[14px] border border-[var(--border-soft)] bg-[var(--bg-soft)] p-4 flex items-center gap-4">
+            <div class="h-10 w-10 rounded-full bg-[var(--text)] text-[var(--bg)] grid place-items-center font-medium text-[13px]">4K</div>
+            <div class="text-[12px] leading-[1.4]">
+              <div class="font-medium">Average delivery in 48 hours</div>
+              <div class="text-[var(--text-muted)]">Including 2 rounds of lighting/material tweaks</div>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <div class="absolute left-[18px] top-[16px] bottom-[16px] w-px bg-[var(--border-soft)] hidden md:block"></div>
+          <div class="space-y-4">
+            <div class="group relative md:pl-[56px]">
+              <div class="hidden md:grid absolute left-0 top-0 h-9 w-9 place-items-center rounded-full border border-[var(--border)] bg-[var(--bg)] text-[11px] font-medium group-hover:bg-[var(--text)] group-hover:text-[var(--bg)] group-hover:border-[var(--text)] transition-colors">01</div>
+              <div class="rounded-[18px] border border-[var(--border-soft)] bg-[var(--bg-soft)] hover:bg-[var(--bg-elevated)] hover:border-[var(--border)] transition-colors p-6 md:p-8">
+                <div class="flex items-start justify-between gap-4 mb-3">
+                  <div class="flex items-center gap-3">
+                    <span class="md:hidden text-[11px] tracking-[0.12em] text-[var(--text-dim)]">01</span>
+                    <h3 class="serif text-[26px] leading-none">Modeling</h3>
+                  </div>
+                  <span class="rounded-full bg-[var(--bg)] border border-[var(--border-soft)] px-2.5 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-muted)]">20%</span>
+                </div>
+                <p class="text-[13.5px] leading-[1.7] text-[var(--text-muted)] mb-5">Clean quad topology from AutoCAD / SketchUp. Walls, openings, custom furniture. No kitbash unless requested.</p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="rounded-full border border-[var(--border-soft)] bg-[var(--bg)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-dim)] group-hover:text-[var(--text-muted)] transition-colors">3ds Max</span>
+                  <span class="rounded-full border border-[var(--border-soft)] bg-[var(--bg)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-dim)] group-hover:text-[var(--text-muted)] transition-colors">CAD Import</span>
+                  <span class="rounded-full border border-[var(--border-soft)] bg-[var(--bg)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-dim)] group-hover:text-[var(--text-muted)] transition-colors">Clean Mesh</span>
+                </div>
+              </div>
+            </div>
+            <div class="group relative md:pl-[56px]">
+              <div class="hidden md:grid absolute left-0 top-0 h-9 w-9 place-items-center rounded-full border border-[var(--border)] bg-[var(--bg)] text-[11px] font-medium group-hover:bg-[var(--text)] group-hover:text-[var(--bg)] group-hover:border-[var(--text)] transition-colors">02</div>
+              <div class="rounded-[18px] border border-[var(--border-soft)] bg-[var(--bg-soft)] hover:bg-[var(--bg-elevated)] hover:border-[var(--border)] transition-colors p-6 md:p-8">
+                <div class="flex items-start justify-between gap-4 mb-3">
+                  <div class="flex items-center gap-3">
+                    <span class="md:hidden text-[11px] tracking-[0.12em] text-[var(--text-dim)]">02</span>
+                    <h3 class="serif text-[26px] leading-none">Texturing</h3>
+                  </div>
+                  <span class="rounded-full bg-[var(--bg)] border border-[var(--border-soft)] px-2.5 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-muted)]">30%</span>
+                </div>
+                <p class="text-[13.5px] leading-[1.7] text-[var(--text-muted)] mb-5">PBR materials, real-world scale, displacement where it matters. Wood grain follows direction. Fabric has weight.</p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="rounded-full border border-[var(--border-soft)] bg-[var(--bg)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-dim)] group-hover:text-[var(--text-muted)] transition-colors">PBR</span>
+                  <span class="rounded-full border border-[var(--border-soft)] bg-[var(--bg)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-dim)] group-hover:text-[var(--text-muted)] transition-colors">Quixel</span>
+                  <span class="rounded-full border border-[var(--border-soft)] bg-[var(--bg)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-dim)] group-hover:text-[var(--text-muted)] transition-colors">UV Unwrap</span>
+                </div>
+              </div>
+            </div>
+            <div class="group relative md:pl-[56px]">
+              <div class="hidden md:grid absolute left-0 top-0 h-9 w-9 place-items-center rounded-full border border-[var(--border)] bg-[var(--bg)] text-[11px] font-medium group-hover:bg-[var(--text)] group-hover:text-[var(--bg)] group-hover:border-[var(--text)] transition-colors">03</div>
+              <div class="rounded-[18px] border border-[var(--border-soft)] bg-[var(--bg-soft)] hover:bg-[var(--bg-elevated)] hover:border-[var(--border)] transition-colors p-6 md:p-8">
+                <div class="flex items-start justify-between gap-4 mb-3">
+                  <div class="flex items-center gap-3">
+                    <span class="md:hidden text-[11px] tracking-[0.12em] text-[var(--text-dim)]">03</span>
+                    <h3 class="serif text-[26px] leading-none">Lighting</h3>
+                  </div>
+                  <span class="rounded-full bg-[var(--bg)] border border-[var(--border-soft)] px-2.5 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-muted)]">25%</span>
+                </div>
+                <p class="text-[13.5px] leading-[1.7] text-[var(--text-muted)] mb-5">HDRI + Corona Sun + practical lights. Lightmix setup so you can choose mood in post without re-render.</p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="rounded-full border border-[var(--border-soft)] bg-[var(--bg)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-dim)] group-hover:text-[var(--text-muted)] transition-colors">HDRI</span>
+                  <span class="rounded-full border border-[var(--border-soft)] bg-[var(--bg)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-dim)] group-hover:text-[var(--text-muted)] transition-colors">Lightmix</span>
+                  <span class="rounded-full border border-[var(--border-soft)] bg-[var(--bg)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-dim)] group-hover:text-[var(--text-muted)] transition-colors">IES</span>
+                </div>
+              </div>
+            </div>
+            <div class="group relative md:pl-[56px]">
+              <div class="hidden md:grid absolute left-0 top-0 h-9 w-9 place-items-center rounded-full border border-[var(--border)] bg-[var(--bg)] text-[11px] font-medium group-hover:bg-[var(--text)] group-hover:text-[var(--bg)] group-hover:border-[var(--text)] transition-colors">04</div>
+              <div class="rounded-[18px] border border-[var(--border-soft)] bg-[var(--bg-soft)] hover:bg-[var(--bg-elevated)] hover:border-[var(--border)] transition-colors p-6 md:p-8">
+                <div class="flex items-start justify-between gap-4 mb-3">
+                  <div class="flex items-center gap-3">
+                    <span class="md:hidden text-[11px] tracking-[0.12em] text-[var(--text-dim)]">04</span>
+                    <h3 class="serif text-[26px] leading-none">Final Render + Post</h3>
+                  </div>
+                  <span class="rounded-full bg-[var(--bg)] border border-[var(--border-soft)] px-2.5 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-muted)]">25%</span>
+                </div>
+                <p class="text-[13.5px] leading-[1.7] text-[var(--text-muted)] mb-5">32-bit render, ACES, denoising off. Grade in Photoshop, subtle bloom, lens effects. Deliver 4K + web + RAW.</p>
+                <div class="flex flex-wrap gap-2">
+                  <span class="rounded-full border border-[var(--border-soft)] bg-[var(--bg)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-dim)] group-hover:text-[var(--text-muted)] transition-colors">ACES</span>
+                  <span class="rounded-full border border-[var(--border-soft)] bg-[var(--bg)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-dim)] group-hover:text-[var(--text-muted)] transition-colors">32-bit</span>
+                  <span class="rounded-full border border-[var(--border-soft)] bg-[var(--bg)] px-3 py-1 text-[10px] tracking-[0.12em] uppercase text-[var(--text-dim)] group-hover:text-[var(--text-muted)] transition-colors">Photoshop</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="mx-auto max-w-[1440px] px-6 md:px-10 lg:px-12 py-16 md:py-24">
+    <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-20 items-start">
+      <div>
+        <h2 class="serif text-[42px] md:text-[56px] leading-[0.9] tracking-[-0.03em] mb-10">Skills &amp;<br>Software</h2>
+        <div class="space-y-5">
+          <div class="group">
+            <div class="flex items-end justify-between mb-2">
+              <div class="flex items-baseline gap-3">
+                <span class="text-[15px] font-[500] tracking-[-0.01em]">3ds Max</span>
+                <span class="text-[10px] tracking-[0.12em] uppercase text-[var(--text-dim)]">Primary</span>
+              </div>
+              <span class="text-[11px] text-[var(--text-dim)]">95%</span>
+            </div>
+            <div class="h-[2px] w-full bg-[var(--border-soft)] overflow-hidden rounded-full">
+              <div class="h-full bg-[var(--text)] group-hover:bg-white transition-colors duration-700" style="width:95%"></div>
+            </div>
+          </div>
+          <div class="group">
+            <div class="flex items-end justify-between mb-2">
+              <div class="flex items-baseline gap-3">
+                <span class="text-[15px] font-[500] tracking-[-0.01em]">Corona Renderer</span>
+                <span class="text-[10px] tracking-[0.12em] uppercase text-[var(--text-dim)]">Photoreal</span>
+              </div>
+              <span class="text-[11px] text-[var(--text-dim)]">92%</span>
+            </div>
+            <div class="h-[2px] w-full bg-[var(--border-soft)] overflow-hidden rounded-full">
+              <div class="h-full bg-[var(--text)] group-hover:bg-white transition-colors duration-700" style="width:92%"></div>
+            </div>
+          </div>
+          <div class="group">
+            <div class="flex items-end justify-between mb-2">
+              <div class="flex items-baseline gap-3">
+                <span class="text-[15px] font-[500] tracking-[-0.01em]">V-Ray</span>
+              </div>
+              <span class="text-[11px] text-[var(--text-dim)]">88%</span>
+            </div>
+            <div class="h-[2px] w-full bg-[var(--border-soft)] overflow-hidden rounded-full">
+              <div class="h-full bg-[var(--text)] group-hover:bg-white transition-colors duration-700" style="width:88%"></div>
+            </div>
+          </div>
+          <div class="group">
+            <div class="flex items-end justify-between mb-2">
+              <div class="flex items-baseline gap-3">
+                <span class="text-[15px] font-[500] tracking-[-0.01em]">Blender</span>
+              </div>
+              <span class="text-[11px] text-[var(--text-dim)]">85%</span>
+            </div>
+            <div class="h-[2px] w-full bg-[var(--border-soft)] overflow-hidden rounded-full">
+              <div class="h-full bg-[var(--text)] group-hover:bg-white transition-colors duration-700" style="width:85%"></div>
+            </div>
+          </div>
+          <div class="group">
+            <div class="flex items-end justify-between mb-2">
+              <div class="flex items-baseline gap-3">
+                <span class="text-[15px] font-[500] tracking-[-0.01em]">SketchUp</span>
+              </div>
+              <span class="text-[11px] text-[var(--text-dim)]">80%</span>
+            </div>
+            <div class="h-[2px] w-full bg-[var(--border-soft)] overflow-hidden rounded-full">
+              <div class="h-full bg-[var(--text)] group-hover:bg-white transition-colors duration-700" style="width:80%"></div>
+            </div>
+          </div>
+          <div class="group">
+            <div class="flex items-end justify-between mb-2">
+              <div class="flex items-baseline gap-3">
+                <span class="text-[15px] font-[500] tracking-[-0.01em]">Photoshop</span>
+                <span class="text-[10px] tracking-[0.12em] uppercase text-[var(--text-dim)]">Post-prod</span>
+              </div>
+              <span class="text-[11px] text-[var(--text-dim)]">90%</span>
+            </div>
+            <div class="h-[2px] w-full bg-[var(--border-soft)] overflow-hidden rounded-full">
+              <div class="h-full bg-[var(--text)] group-hover:bg-white transition-colors duration-700" style="width:90%"></div>
+            </div>
+          </div>
+          <div class="group">
+            <div class="flex items-end justify-between mb-2">
+              <div class="flex items-baseline gap-3">
+                <span class="text-[15px] font-[500] tracking-[-0.01em]">Unreal Engine</span>
+              </div>
+              <span class="text-[11px] text-[var(--text-dim)]">72%</span>
+            </div>
+            <div class="h-[2px] w-full bg-[var(--border-soft)] overflow-hidden rounded-full">
+              <div class="h-full bg-[var(--text)] group-hover:bg-white transition-colors duration-700" style="width:72%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="lg:pt-4">
+        <div class="rounded-[20px] border border-[var(--border-soft)] bg-[var(--bg-soft)] p-6 md:p-8">
+          <div class="flex items-center gap-2 mb-6">
+            <div class="h-8 w-8 rounded-full bg-[var(--text)] text-[var(--bg)] grid place-items-center"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg></div>
+            <span class="text-[11px] tracking-[0.16em] uppercase">Studio Setup</span>
+          </div>
+          <div class="grid grid-cols-2 gap-3 mb-8">
+            <div class="rounded-[12px] bg-[var(--bg)] border border-[var(--border-soft)] p-4">
+              <div class="text-[10px] tracking-[0.14em] uppercase text-[var(--text-dim)] mb-1">Workstation</div>
+              <div class="text-[12px] font-medium">Ryzen 9 + RTX 4090</div>
+            </div>
+            <div class="rounded-[12px] bg-[var(--bg)] border border-[var(--border-soft)] p-4">
+              <div class="text-[10px] tracking-[0.14em] uppercase text-[var(--text-dim)] mb-1">Render Node</div>
+              <div class="text-[12px] font-medium">Dual Xeon Farm</div>
+            </div>
+            <div class="rounded-[12px] bg-[var(--bg)] border border-[var(--border-soft)] p-4">
+              <div class="text-[10px] tracking-[0.14em] uppercase text-[var(--text-dim)] mb-1">Color</div>
+              <div class="text-[12px] font-medium">Calibrated 4K ACES</div>
+            </div>
+            <div class="rounded-[12px] bg-[var(--bg)] border border-[var(--border-soft)] p-4">
+              <div class="text-[10px] tracking-[0.14em] uppercase text-[var(--text-dim)] mb-1">Backup</div>
+              <div class="text-[12px] font-medium">NAS + Cloud Sync</div>
+            </div>
+          </div>
+          <div class="border-t border-[var(--border-soft)] pt-6">
+            <h4 class="serif text-[20px] mb-3">Why this stack?</h4>
+            <p class="text-[13px] leading-[1.7] text-[var(--text-muted)]">Corona for interiors because it handles light bounce like real life. V-Ray when clients need vegetation scatter and huge exteriors. Blender for fast product ideation. Unreal only when client asks for walkthrough.</p>
+          </div>
+        </div>
+        <div class="mt-4 rounded-[16px] border border-dashed border-[var(--border)] p-4 flex items-center gap-3 text-[11px] tracking-[0.08em] text-[var(--text-muted)]">
+          <span class="h-6 w-6 rounded-full border border-[var(--border)] grid place-items-center text-[10px]">!</span>Example portfolio — Replace with your real benchmarks and machine specs
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why hire me -->
+  <section class="border-t border-[var(--border-soft)] bg-[var(--text)] text-[var(--bg)]">
+    <div class="mx-auto max-w-[1440px] px-6 md:px-10 lg:px-12 py-16 md:py-24">
+      <div class="grid lg:grid-cols-[0.8fr_1.2fr] gap-12 items-start">
+        <div>
+          <div class="inline-flex items-center gap-2 rounded-full border border-black/10 px-3 py-1 mb-6">
+            <span class="h-1.5 w-1.5 rounded-full bg-black"></span>
+            <span class="text-[10px] tracking-[0.16em] uppercase text-black/60">Why Hire Me?</span>
+          </div>
+          <h2 class="serif text-[44px] md:text-[56px] leading-[0.9] tracking-[-0.03em]">Not a render<br>farm. A partner.</h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-px bg-black/10 border border-black/10 rounded-[18px] overflow-hidden">
+          <div class="bg-[#f5f2ed] p-7 md:p-8">
+            <div class="mb-10">
+              <div class="serif text-[40px] leading-none tracking-[-0.03em]">98%</div>
+              <div class="text-[10px] tracking-[0.14em] uppercase text-black/50 mt-1">Approval on 1st final</div>
+            </div>
+            <h3 class="serif text-[20px] leading-[1.1] mb-3">Photoreal, not plastic</h3>
+            <p class="text-[13px] leading-[1.6] text-black/60">I obsess over micro-details: edge wear, dust in sunbeams, fabric tension. Clients stop asking 'is this real?'</p>
+          </div>
+          <div class="bg-[#f5f2ed] p-7 md:p-8">
+            <div class="mb-10">
+              <div class="serif text-[40px] leading-none tracking-[-0.03em]">48H</div>
+              <div class="text-[10px] tracking-[0.14em] uppercase text-black/50 mt-1">Average first draft</div>
+            </div>
+            <h3 class="serif text-[20px] leading-[1.1] mb-3">Fast, but not rushed</h3>
+            <p class="text-[13px] leading-[1.6] text-black/60">48-72h first look. I work Hyderabad hours, so revisions happen while US/EU sleeps. Your deadline is mine.</p>
+          </div>
+          <div class="bg-[#f5f2ed] p-7 md:p-8">
+            <div class="mb-10">
+              <div class="serif text-[40px] leading-none tracking-[-0.03em]">200+</div>
+              <div class="text-[10px] tracking-[0.14em] uppercase text-black/50 mt-1">Projects shipped</div>
+            </div>
+            <h3 class="serif text-[20px] leading-[1.1] mb-3">I read drawings</h3>
+            <p class="text-[13px] leading-[1.6] text-black/60">Give me DWG, SketchUp, or a napkin sketch. I understand setbacks, FSI, vaastu constraints, and client taste.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer / contact -->
+  <footer id="contact" class="bg-[var(--bg)] border-t border-[var(--border-soft)]">
+    <div class="mx-auto max-w-[1440px] px-6 md:px-10 lg:px-12 py-16 md:py-24">
+      <div class="grid lg:grid-cols-[1.2fr_0.8fr] gap-12">
+        <div>
+          <h2 class="serif text-[48px] md:text-[84px] leading-[0.85] tracking-[-0.04em] mb-8">Let's make<br>your space<br><span class="italic text-[var(--text-muted)]">unforgettable.</span></h2>
+          <div class="flex flex-wrap gap-3">
+            <a href="mailto:hello@arunviz.studio" class="inline-flex h-[48px] items-center gap-3 rounded-full bg-[var(--text)] px-7 text-[12px] tracking-[0.12em] uppercase text-[var(--bg)] font-semibold hover:bg-white transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>hello@arunviz.studio</a>
+            <a href="tel:+91XXXXXXXXXX" class="inline-flex h-[48px] items-center gap-2 rounded-full border border-[var(--border)] px-6 text-[12px] tracking-[0.12em] uppercase hover:bg-[var(--surface)] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+91 XXXXX XXXXX</a>
+            <a href="#" title="Instagram → @arun.viz — example profile" class="inline-flex h-[48px] items-center gap-2 rounded-full border border-[var(--border)] px-6 text-[12px] tracking-[0.12em] uppercase hover:bg-[var(--surface)] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>Instagram</a>
+            <a href="#" title="Behance → behance.net/arunviz — example link" class="inline-flex h-[48px] items-center gap-2 rounded-full border border-[var(--border)] px-6 text-[12px] tracking-[0.12em] uppercase hover:bg-[var(--surface)] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>Behance</a>
+          </div>
+        </div>
+        <div class="lg:pl-12">
+          <div class="grid grid-cols-2 gap-6 text-[12px] leading-[1.6]">
+            <div>
+              <div class="text-[10px] tracking-[0.14em] uppercase text-[var(--text-dim)] mb-2">Mobile</div>
+              <a href="tel:+91XXXXXXXXXX" class="text-[var(--text)] hover:text-white transition-colors">+91 XXXXX XXXXX</a>
+            </div>
+            <div>
+              <div class="text-[10px] tracking-[0.14em] uppercase text-[var(--text-dim)] mb-2">Studio</div>
+              <div class="text-[var(--text-muted)]">Jubilee Hills, Road No.36<br>Hyderabad, TG 500033<br>By appointment only</div>
+            </div>
+            <div>
+              <div class="text-[10px] tracking-[0.14em] uppercase text-[var(--text-dim)] mb-2">Availability</div>
+              <div class="text-[var(--text-muted)]">Mon—Sat, 10am—7pm IST<br>2 slots open for Dec 2024<br><span class="text-[var(--text)]">Remote OK</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-16 md:mt-24 pt-8 border-t border-[var(--border-soft)] flex flex-col md:flex-row items-start md:items-center justify-between gap-4 text-[11px] tracking-[0.12em] uppercase text-[var(--text-dim)]">
+        <div class="flex items-center gap-6">
+          <span>© 2024 Rakesh</span>
+          <span class="hidden md:inline h-px w-8 bg-[var(--border)]"></span>
+          <span>Hyderabad • Photoreal Spaces Built in 3D</span>
+        </div>
+        <div class="flex items-center gap-4">
+          <span>Built as example portfolio for beginners</span>
+          <span class="h-1 w-1 rounded-full bg-[var(--border)]"></span>
+          <span>Fonts: Instrument Serif + Geist</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
