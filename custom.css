@@ -75,3 +75,48 @@
   grid-template-rows: 1fr;
   opacity: 1;
 }
+
+/* --- Hero image --- */
+.hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 55%;
+}
+.hero-shade {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 40%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+  pointer-events: none;
+}
+
+/* --- Long email button: keep it inside the container on small phones --- */
+#contact a[href^="mailto:"] { max-width: 100%; }
+@media (max-width: 400px) {
+  #contact a[href^="mailto:"] {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    gap: 0.5rem;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+  }
+}
+
+/* --- Hero buttons: never wrap the label inside the pill --- */
+.hero-actions a {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* --- Hero text + buttons row: give the buttons the room they need --- */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero-row { grid-template-columns: 1fr; }
+}
+@media (min-width: 1024px) {
+  .hero-row { grid-template-columns: minmax(0, 1fr) auto; }
+}
